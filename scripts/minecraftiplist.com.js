@@ -2,7 +2,7 @@ async function vote(first) {
     if (first) return
 
     const project = await getProject()
-    document.querySelector('#username').value = project.nick
+    document.querySelector('input[autocomplete="username"]').value = project.nick  //i guess it works now ¯\_(ツ)_/¯
     document.querySelector('button[type="submit"] img[alt="Login"]').parentElement.click()
 }
 
