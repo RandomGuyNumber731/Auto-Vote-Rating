@@ -1,3 +1,7 @@
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));		// жоска накостылил ибо инет у меня кринж багует приколямба нада дилэй небольшой
+}
+
 async function vote(first) {
     if (first === false) return
     if (document.querySelector('#center > div > h1') != null && document.querySelector('#center > div > h1').textContent.includes('Successfully voted')) {
@@ -44,5 +48,8 @@ async function vote(first) {
     } else {
         console.warn('Не удалось найти поле для никнейма, возможно это голосование без награды')
     }
+
+    await sleep(10000)				// а вот и костыльчик
+
     document.querySelector('#submit_vote_form > input[type="submit"]').click()
 }

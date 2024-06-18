@@ -1,4 +1,5 @@
 async function vote(first) {
+    document.querySelector('#openModal').click()		// хз но так работает
     if (document.querySelector('.alert.alert-danger') != null) {
         const message = document.querySelector('.alert.alert-danger').textContent.trim()
         if (message.includes('verification required') || message.includes('not double click or refresh page')) return
@@ -55,7 +56,6 @@ async function vote(first) {
     }
 
     if (document.querySelector('#vote .h-captcha') && first) return
-
 
     document.getElementById('game_user').value = project.nick
     document.querySelector('#submit').click()
